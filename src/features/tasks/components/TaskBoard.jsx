@@ -1,6 +1,11 @@
 import { useState } from "react"
 import { TaskForm } from "./TaskForm"
 import { TaskList } from "./TaskList"
+import { TASK_UI_TEXT } from "../constants/task-ui.constants"
+import { HTML_TAGS } from "../../../shared/constants/html-tags.constants"
+
+  const SectionTag = HTML_TAGS.SECTION
+  const SubTitle = HTML_TAGS.H2
 
 export function TaskBoard() {
   const [taskText, setTaskText] = useState("")
@@ -15,6 +20,9 @@ export function TaskBoard() {
       return
     }
 
+  
+
+
     const newTask = {
       id: Date.now(),
       title: taskText,
@@ -26,8 +34,8 @@ export function TaskBoard() {
   }
 
   return (
-    <section>
-      <h2>Gestión de tareas</h2>
+    <SectionTag>
+      <SubTitle>{TASK_UI_TEXT.BOARD_TITLE}</SubTitle>
 
       <TaskForm
         taskText={taskText}
@@ -36,6 +44,6 @@ export function TaskBoard() {
       />
 
       <TaskList tasks={tasks} />
-    </section>
+    </SectionTag>
   )
 }

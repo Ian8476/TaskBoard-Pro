@@ -1,16 +1,26 @@
+import { TASK_UI_TEXT } from "../constants/task-ui.constants"
+import { HTML_TAGS } from "../../../shared/constants/html-tags.constants"
+
+
+
+const Sectiontag = HTML_TAGS.SECTION  
+const Title = HTML_TAGS.H3
+const InputTag = HTML_TAGS.INPUT
+const ButtonTag = HTML_TAGS.BUTTON
+
 export function TaskForm({ taskText, onTaskTextChange, onAddTask }) {
   return (
-    <section>
-      <h3>Agregar tarea</h3>
+    <Sectiontag>
+      <Title>{TASK_UI_TEXT.FORM_TITLE}</Title>
 
-      <input
+      <InputTag
         type="text"
         value={taskText}
         onChange={onTaskTextChange}
-        placeholder="Escriba una tarea"
+        placeholder={TASK_UI_TEXT.INPUT_PLACEHOLDER}
       />
 
-      <button onClick={onAddTask}>Agregar</button>
-    </section>
+      <ButtonTag onClick={onAddTask}>{TASK_UI_TEXT.ADD_BUTTON}</ButtonTag>
+    </Sectiontag>
   )
 }

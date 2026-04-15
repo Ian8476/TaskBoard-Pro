@@ -1,10 +1,12 @@
 import { TaskBoard } from "../features/tasks/components/TaskBoard"
+import { HTML_TAGS } from "../shared/constants/html-tags.constants"
 
+const TitleTag = HTML_TAGS.H1
 
 function App() {
-  return <h1>TaskBoard Hooks Lab
+  return <TitleTag>TaskBoard Hooks Lab
     <TaskBoard />
-  </h1>
+  </TitleTag>
 }
 
 export default App
